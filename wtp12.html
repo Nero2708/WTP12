@@ -3,26 +3,23 @@
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
     <script>
-        var app = angular.module('myApp', []);
-        app.controller('myCtrl', function($scope){
-            $scope.studentArray = [];
-            $scope.divStyle = {
-              visiblity:hidden
-            }
-            $scope.event = {
-              fname:'',
-              lname:'',
-    
-            }
-            $scope.opStyle = {
-              hidden:false
-            }
-            $scope.print = ()=>{
-              $scope.divStyle.hidden = true;
-              $scope.opStyle.hidden = false;
-            }
+        var app = angular.module("myApp", []);
+        app.controller("myCtrl", function ($scope) {
+          $scope.studentArray = [];
+          $scope.divStyle = {
+            visibility: 'unset'
+          };
+          $scope.event = {
+          };
+          $scope.opStyle = {
+            visibility: 'hidden',
+          };
+          $scope.print = () => {
+            $scope.divStyle.visibility = 'hidden';
+            $scope.opStyle.visibility = 'unset';
+          };
         });
-    </script>
+      </script>
     </html>
 </head>
 <body ng-controller="eventController"> 
@@ -84,5 +81,10 @@
         </tr>
       </table>
     </div>
+    <div>
+        <p>You entered:</p>
+        <p>First Name: {{ event.fname }}</p>
+        <p>Last Name: {{ event.lname }}</p>
+      </div>
   </body>
     </form>
