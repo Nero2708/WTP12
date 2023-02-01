@@ -2,25 +2,87 @@
 <html ng-app="studentApp">
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope){
+            $scope.studentArray = [];
+            $scope.divStyle = {
+              visiblity:hidden
+            }
+            $scope.event = {
+              fname:'',
+              lname:'',
+    
+            }
+            $scope.opStyle = {
+              hidden:false
+            }
+            $scope.print = ()=>{
+              $scope.divStyle.hidden = true;
+              $scope.opStyle.hidden = false;
+            }
+        });
+    </script>
+    </html>
 </head>
 <body ng-controller="eventController"> 
     <h1>Event Registration</h1>
-    <form ng-submit="submitEventForm()" >
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" id="fName" ng-model="event.fname" /> 
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" id="lName" ng-model="event.lname" />
-        <label for="gender">Gender</label>
-        <input type="text" name="gender" id="male" ng-model="event.gender" />
-        <label for="class">Class</label>
-        <input type="text" name="class" id="class" ng-model="event.class" />
-        <label for="dept">Department</label>
-        <input type="text" name="dept" id="dept" ng-model="event.dept" />
-        <label for="typeofevent">Type of event</label>
-        <input type="text" name="type" id="type" ng-model="event.type" />
-        <label for="contact">Contact</label>
-        <input type="text" name="contact" id="contact" ng-model="event.contact" />
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" ng-model="event.email" />
+    <form ng-submit="print()" >
+        
+    <table>
+        <tr>
+          <td>First Name</td>
+          <td>
+            <input type="text" name="firstName" id="fName" ng-model="event.fname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Last Name</td>&nbsp;
+          <td>
+            <input type="text" name="lastName" id="lName" ng-model="event.lname" />
+          </td>
+        </tr>
+        <tr>
+          <td>Gender</td>&nbsp;
+          <td>
+            <input type="text" name="gender" id="male" ng-model="event.gender" />
+          </td>
+        </tr>
+        <tr>
+          <td>Class</td>&nbsp;
+          <td>
+            <input type="text" name="class" id="class" ng-model="event.class" />
+          </td>
+        </tr>
+        <tr>
+          <td>Department</td>&nbsp;
+          <td>
+            <input type="text" name="dept" id="dept" ng-model="event.dept" />
+          </td>
+        </tr>
+        <tr>
+          <td>Type Of Event</td>&nbsp;
+          <td>
+            <input type="text" name="type" id="type" ng-model="event.type" />
+          </td>
+        </tr>
+        <tr>
+          <td>Contact No</td>&nbsp;
+          <td>
+            <input type="text" name="contact" id="contact" ng-model="event.contact" />
+          </td>
+        </tr>
+        <tr>
+          <td>Email</td>&nbsp;
+          <td>
+            <input type="email" name="email" id="email" ng-model="event.email" />
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="submit" value="Submit"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
     </form>
-    
